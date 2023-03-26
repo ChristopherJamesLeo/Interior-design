@@ -27,6 +27,7 @@ export const navItems = [
     {
         cla : "nav-item nav_1",
         navLink : "Home",
+        contentlink : "#",
         icon : "fas fa-angle-down",
         navMenu_1 : "Menu One",
         navMenu_2 : "Menu Two",
@@ -36,11 +37,13 @@ export const navItems = [
     },
     {
         cla : "nav-item",
-        navLink : "About Us"
+        navLink : "About Us",
+        contentlink : "#about_us_section",
     },
     {
         cla : "nav-item nav_1",
         navLink : "Projects",
+        contentlink : "#",
         icon : "fas fa-angle-down",
         navMenu_1 : "Menu One",
         navMenu_2 : "Menu Two",
@@ -49,14 +52,17 @@ export const navItems = [
     },
     {
         cla : "nav-item",
-        navLink : "News"
+        navLink : "News",
+        contentlink : "#",
     },
     {
         cla : "nav-item",
         navLink : "Services",
+        contentlink : "#",
     },
     {
         cla : "nav-item",
         navLink : "Contact",
+        contentlink : "#contact_us_section",
     }
 ]

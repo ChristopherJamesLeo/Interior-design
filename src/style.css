@@ -74,6 +74,23 @@ body{
 .navbar {
     position: relative;
 }
+/* .navbar.active {
+    width: 100%;
+    position: fixed;
+    background-color: var(--global-white-color);
+
+    top: 0;
+    animation: navani 0.5s linear 0s 1 forwards;
+} */
+/* @keyframes navani {
+    0%{
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+
+} */
 .nav-brand {
     color: var(--global-white-color);
     text-decoration: none;
@@ -547,3 +564,213 @@ body{
     text-decoration: none;
 }
 /* End Footer Section */
+
+
+/* --------------------- */
+/* ---- about us ------- */
+/* --------------------- */
+
+/* start experience section */
+.about_us_img {
+    width: 100%;
+    height: 600px;
+    background-image: url("../assets/img/background/about_1.png.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: end;
+}
+.about_us_experience {
+    text-align: start;
+}
+.about_us_experience h5 {
+    color: var(--global-primary-color);
+
+}
+.about_us_experience h5 span:first-of-type {
+    font-size: 100px;
+    font-weight: 800;
+}
+.about_us_experience h5 span:nth-of-type(2) {
+    font-size: 70px;
+    font-weight: 900;
+}
+.about_us_experience h5 span:last-of-type {
+    font-size: 18px;
+    letter-spacing: 9px;
+    font-weight: 800;
+}
+
+.about_us_content {
+    padding: 100px;
+}
+.about_us_content p {
+    font-size: 14px;
+    line-height: 2;
+}
+.about_us_content a {
+    color: var(--global-white-color);
+    background-color: var(--global-secondary-color);
+    border: 1px solid var(--global-secondary-color);
+    transition: all 0.3s ease 0s;
+}
+.about_us_content a:hover {
+    color: var(--global-secondary-color);
+    background-color: var(--global-white-color);
+    border: 1px solid var(--global-secondary-color);
+}
+/* start experience section */
+
+/* Start Our Team Section */
+.our_team_img {
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+.our_team_img::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--global-secondary-color);
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transform: scale(0.9);
+
+
+}
+.team_1 {
+    background-image: url("../assets/img/avator/person_1.jpg.webp");
+}
+.team_2 {
+    background-image: url("../assets/img/avator/person_2.jpg.webp");
+}
+.team_3 {
+    background-image: url("../assets/img/avator/person_3.jpg.webp");
+}
+.team_4 {
+    background-image: url("../assets/img/avator/person_4.jpg.webp");
+}
+.our_team_content_link {
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0,0,0,0.4);
+
+    position: absolute;
+    bottom: 0;
+
+    transform: translateY(100%);
+
+    transition: all 0.3s ease 0s;
+
+
+    
+}
+.our_team_img:hover .our_team_content_link {
+    transform: translateX(0);
+}
+.our_team_content_link a {
+    color: var(--global-secondary-color);
+    display: block;
+    margin: 0px 10px;
+}
+.our_team_content_link a span {
+    position: relative;
+}
+.ourteam_content_container h5 {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.ourteam_content_container h6 {
+    color: var(--global-primary-color);
+
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    
+}
+/* End Our Team Section */
+
+/* Start Why Choose Us Section */
+.why_choose_us_section {
+    width: 100%;
+    padding-right: 20px;
+}
+.why_choose_img{
+    width: 100%;
+    height: 500px;
+    background-image: url("../assets/img/banner/hero_bg_1.jpg.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.why_choose_content ul li{
+    margin: 10px 0px;
+    padding-left: 20px;
+    font-size: 14px;
+
+    position: relative;
+}
+.why_choose_content ul li::before{
+    content: "\f00c";
+    font-size: 15px;
+    font-family: "Font Awesome";
+    color: var(--global-secondary-color);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+/* End Why Choose Us Section */
+
+/* Start Contact Us Section */
+.contact_us_section{
+    background-color : #f8f9fa ;
+}
+.contact_us_form {
+    padding: 50px;
+    background-color: var(--global-white-color);
+    box-shadow: 0px 0px 15px var(--global-rgba-color);
+}
+.contact_us_form form label {
+    font-size: 13px;
+    font-weight: 700;
+    color: gray;
+}
+.contact_us_form form input {
+    padding: 15px;
+    color: #495057;
+    font-size: 13px;
+}
+.contact_us_form form input::placeholder {
+    color: #495057;
+}
+.contact_us_form form textarea {
+    height: 150px;
+    font-size: 13px;
+}
+.contact_us_form form input:focus,.contact_us_form form textarea:focus{
+    box-shadow: none;
+}
+.contact_us_form form button {
+    background-color: var(--global-secondary-color);
+    color: var(--global-white-color);
+    border: 1px solid var(--global-secondary-color);
+    transition: all 0.3s ease 0s;
+}
+.contact_us_form form button:hover {
+    background-color: var(--global-white-color);
+    color: var(--global-secondary-color);
+    border: 1px solid var(--global-secondary-color);
+}
+/* End Contact Us Section */

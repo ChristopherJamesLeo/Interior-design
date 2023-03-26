@@ -8,8 +8,18 @@ import {clients} from "./clients";
 import {decorationLists} from "./decorationList";
 import {blogposts} from "./blog";
 import {footernavItems,footercontacts,recentNews} from "./footer";
+import {ourteams,aboutwhychooses} from "./about";
 import './style.css';
 
+// window.addEventListener("scroll",function(){
+//     console.log(this.scrollY)
+//     var getwindowscroll = this.scrollY;
+//     if(getwindowscroll > 100) {
+//         document.querySelector(".navbar").classList.add("active");
+//     }else {
+//         document.querySelector(".navbar").classList.remove("active");
+//     }
+// })
 
 
 function Header(){
@@ -90,9 +100,9 @@ function Header(){
     }
 
     function NavBarMenu(props){
-        const {cla,navLink,icon,navMenu_1,navMenu_2,navMenu_3,navMenu_4} = props ;
+        const {cla,navLink,contentlink,icon,navMenu_1,navMenu_2,navMenu_3,navMenu_4} = props ;
         return (
-            <li className={cla}><a href='#' className=''>{navLink}<i className={icon}></i></a>
+            <li className={cla}><a href={contentlink} className=''>{navLink}<i className={icon}></i></a>
                 <ul className='list-unstyled nav_secondary_menu'>
                     <li><a href='#' className='nav-link'>{navMenu_1}</a></li>
                     <li><a href='#' className='nav-link'>{navMenu_2}</a></li>
@@ -155,7 +165,6 @@ function Designintro(){
                         })
                     }
                 </div>
-
             </div>
         </section>
     )
@@ -287,9 +296,8 @@ function DecorationList(){
                             {
                                 decorationLists.map(function(decorationList){
                                     let id = Math.floor(Math.random()*10000);
-                                    console.log(id);
                                     return (
-                                        <div className='col-md-6 col-sm-12 mb-4'>
+                                        <div key={id} className='col-md-6 col-sm-12 mb-4'>
                                             <Decorations key={id} {...decorationList} />
                                         </div>
                                         
@@ -355,6 +363,164 @@ function Blog(){
     }
 }
 
+
+
+function AboutUs(){
+    return (
+        <section id='about_us_section' className='py-5 about_us_section'>
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-lg-6 col-md-12'>
+                        <div className='about_us_img'>
+                            <div className='about_us_experience'>
+                                <h5>
+                                    <span>27</span>
+                                    <span>yrs.</span><br/>
+                                    <span className='text-uppercase'>of experience</span>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='col-lg-6 col-md-12 '>
+                        <div className=' d-flex flex-column justify-content-start align-items-start about_us_content'>
+                            <div className='content_header'>
+                                <span className='text-uppercase content_sub_title'>ARCHITECTURAL DESIGN</span>
+                                <h4 className='mt-2 mb-5'>Architectural Design Co.</h4>
+                                
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate fuga ipsum commodi aliquid aspernatur reiciendis enim cum voluptas id itaque, asperiores modi, voluptatibus sed voluptate nulla et ratione aliquam! Quaerat.
+                            </p>
+                            <div className='mt-5 d-flex justify-content-start'>
+                                <a href='#' className=' btn rounded-0'>Read More About Us</a>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+function Ourteam(){
+    return (
+        <section className='py-5 our_team_section'>
+            <div className='container'>
+                <div className='text-center content_header'>
+                    <span className='text-uppercase content_sub_title'>MEET OUR TEAM</span>
+                    <h3 className='mt-2 mb-5 fw-semibold'>Our Team</h3>
+                </div>
+                <div className='row'>
+                    {
+                        ourteams.map(function(ourteam){
+                            let id = Math.random()*1000
+                            return(
+                                <OurTeam key={id} {...ourteam}/>
+                            )
+                        }) 
+                    }
+                </div>
+            </div>
+        </section>
+    )
+    function OurTeam(props){
+        const {cla,name,position} = props;
+        return (
+            <div className='col-lg-3 col-md-6 col-sm-12 mb-2'>
+                <div className='ourteam_content_container'>
+                    <div className={cla}>
+                        <div className='d-flex justify-content-center align-items-center our_team_content_link'>
+                            <a href='#'><span><i className='fab fa-facebook-f'></i></span></a>
+                            <a href='#'><span><i className='fab fa-instagram'></i></span></a>
+                            <a href='#'><span><i className='fab fa-google'></i></span></a>
+                        </div>
+                    </div>
+                    <h5>{name}</h5>
+                    <h6 className='text-uppercase'>{position}</h6>
+                </div>
+            </div>
+        )
+    }
+}
+
+function WhyChooseUs(){
+    return(
+        <section className='why_choose_us_section'>
+            <div className=' row'>
+                <div className='col-lg-10'>
+                    <div className='row'>
+                        <div className='col-lg-6'>
+                            <div className='why_choose_img'>
+                            </div>
+                        </div>
+                        <div className='col-lg-6'>
+                            <div className='why_choose_content_container'>
+                                <div className='why_choose_content'>
+                                    <div className='content_header'>
+                                        <span className='text-uppercase content_sub_title'>ARCHITECTURAL DESIGN</span>
+                                        <h4 className='mt-2 mb-5'>Why Choose Us</h4>
+                                    </div>
+                                    <div className='text-muted'>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aliquid eius facilis voluptatem eligendi magnam accusamus vel commodi asperiores sint rem reprehenderit nobis nesciunt veniam qui fugit doloremque numquam quod.
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur tempora distinctio ipsam nesciunt recusandae repellendus asperiores amet.
+                                    </p>
+                                    <ul className='list-unstyled'>
+                                        {
+                                            aboutwhychooses.map(function(aboutwhychoose){
+                                                let id = Math.random()*1000;
+
+                                                return (
+                                                    <li key={id} >{aboutwhychoose}</li>
+                                                )
+                                            })
+
+                                        }
+                                    </ul>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+function ContactUs(){
+    return(
+        <section id='contact_us_section' className='py-5 contact_us_section'>
+            <div className='container'>
+                <h1 className='mb-5 text-uppercase'>Say <span className='fw-bold'>Hello</span></h1>
+                <div className='contact_us_form'>
+                    <form action='' method=''>
+                        <div className='form-group mb-3'>
+                            <label for = "fullname">Full Name</label>
+                            <input type={"text"} name="fullname" id='fullname' className='form-control rounded-0 p-2' placeholder='Full Name' />
+                        </div>
+                        <div className='form-group mb-3'>
+                            <label for = "Email">Email</label>
+                            <input type={"email"} name="Email" id='Email' className='form-control rounded-0 p-2' placeholder='Full Address'/>
+                        </div>
+                        <div className='form-group mb-3'>
+                            <label for = "fullname">Message</label>
+                            <textarea className='form-control rounded-0 p-2' placeholder='Say Hello to Us'></textarea>
+                        </div>
+                        <button type='submit' className='btn py-2 px-3 rounded-0'>Send</button>
+                    </form>
+                </div>
+            </div>
+            
+        </section>
+    )
+}
+
 function Footer(){
     return (
         <footer className='py-5 footer_section'>
@@ -370,8 +536,9 @@ function Footer(){
                                     <ul className='col-lg-6 list-unstyled'>
                                         {
                                             footernavItems.map(function(footernavItem){
+                                                let id = Math.random()*1000;
                                                 return (
-                                                    <li><a href='#' className='nav-link'>{footernavItem}</a></li> 
+                                                    <li key={id}><a href='#' className='nav-link'>{footernavItem}</a></li> 
                                                 )
                                             })
                                         }
@@ -379,8 +546,9 @@ function Footer(){
                                     <ul className='col-lg-6 list-unstyled'>
                                         {
                                             footercontacts.map(function(footercontact){
+                                                let id = Math.random()*1000;
                                                 return (
-                                                    <li><a href='#' className='nav-link'>{footercontact}</a></li> 
+                                                    <li key={id} ><a href='#' className='nav-link'>{footercontact}</a></li> 
                                                 )
                                             })
                                         }
@@ -393,7 +561,7 @@ function Footer(){
                     <div className='col-lg-4 col-md-12'>
                         <div className='footer_content_container'>
                             <div className='mb-5 footer_title'>
-                                <h5>Navigation</h5>
+                                <h5>Recent News</h5>
                             </div>
                             <div className='footer_content'>
                                 <div className='recent_content_container'>
@@ -417,7 +585,7 @@ function Footer(){
                     <div className='col-lg-4 col-md-12'>
                         <div className='footer_content_container'>
                             <div className='mb-4 footer_title'>
-                                <h5>Navigation</h5>
+                                <h5>Subscribe Newsletter</h5>
                             </div>
                             <div className='footer_content'>
                                 <div className='subscribe_letter'>
@@ -463,8 +631,6 @@ function Footer(){
     }
 }
 
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <main>
@@ -475,6 +641,10 @@ root.render(
         <Clients/>
         <DecorationList />
         <Blog />
+        <AboutUs/>
+        <Ourteam/>
+        <WhyChooseUs/>
+        <ContactUs/>
         <Footer/>
         
     </main>
